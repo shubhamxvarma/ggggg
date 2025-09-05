@@ -1,0 +1,7 @@
+# simulate writing a fake RSA key to disk (to /tmp or AppData)
+with open("id_rsa", "w") as f:
+    f.write(fake_rsa_key)
+
+# simulate "committing" this file
+import os
+os.system("git init && git add id_rsa && git commit -m 'Add key'")
